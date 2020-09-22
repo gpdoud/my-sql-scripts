@@ -117,3 +117,7 @@ INSERT LINEITEMS (RequestId, ProductId, Quantity) VALUES
 	(2, 1, 1), (2, 3, 2);
 
 SELECT * From LINEITEMS;
+
+DROP USER IF EXISTS prs_user@localhost;
+CREATE USER prs_user@localhost IDENTIFIED BY 'sesame';
+GRANT SELECT, INSERT, DELETE, UPDATE ON prs.* TO prs_user@localhost;
